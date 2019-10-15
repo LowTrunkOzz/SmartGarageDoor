@@ -122,8 +122,7 @@ void loop() {
         if (HTTP_req.indexOf("ajax_switch") > -1) {
           // read switch state and send appropriate paragraph text
           GetSwitch1State(client);
-          //GetSwitch2State(client);
-          //delay(0);
+          delay(0);
         }
 
         if (HTTP_req.indexOf("ajax_switch") > -1) {
@@ -197,20 +196,20 @@ void loop() {
 // send the state of the switch to the web browser
 void GetSwitch1State(WiFiClient cl) {
     if (digitalRead(statusPin1) == 1) {
-      cl.println("<p>Garage Door 1 is currently: <span style='background-color:#FF0000; font-size:18pt'>Open</span></p>");
+      cl.println("<p>Garage Door 1 is <span style='background-color:#FF0000; font-size:18pt'>Open</span></p>");
     }
     else {
-      cl.println("<p>Garage Door 1 is currently: <span style='background-color:#00FF00; font-size:18pt'>Closed</span></p>");
+      cl.println("<p>Garage Door 1 is <span style='background-color:#00FF00; font-size:18pt'>Closed</span></p>");
     }
   }
  
  // send the state of the switch to the web browser
 void GetSwitch2State(WiFiClient cl) {
     if (digitalRead(statusPin2) == 1) {
-      cl.println("<p>Garage Door 2 is currently: <span style='background-color:#FF0000; font-size:18pt'>Open</span></p>");
+      cl.println("<p>Garage Door 2 is <span style='background-color:#FF0000; font-size:18pt'>Open</span></p>");
     }
     else {
-      cl.println("<p>Garage Door 2 is currently: <span style='background-color:#00FF00; font-size:18pt'>Closed</span></p>");
+      cl.println("<p>Garage Door 2 is <span style='background-color:#00FF00; font-size:18pt'>Closed</span></p>");
     }
   }
   

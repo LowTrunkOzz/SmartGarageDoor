@@ -170,10 +170,10 @@ void loop() {
 // send the state of the switch to the web browser
 void GetSwitchState(WiFiClient cl) {
     if (digitalRead(statusPin) == 1) {
-      cl.println("<p>Garage Door is currently: <span style='background-color:#FF0000; font-size:18pt'>Open</span></p>");
+      cl.println("<p>Garage Door is <span style='background-color:#FF0000; font-size:18pt'>Open</span></p>");
     }
     else {
-      cl.println("<p>Garage Door is currently: <span style='background-color:#00FF00; font-size:18pt'>Closed</span></p>");
+      cl.println("<p>Garage Door is <span style='background-color:#00FF00; font-size:18pt'>Closed</span></p>");
     }
   }
  
