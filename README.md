@@ -1,4 +1,4 @@
-This is a project taken from https://www.hackster.io/s-wilson/iot-garage-door-yes-another-one-a2a6fb and modified WiFi Manager so you don't have to input your SSID and password before flashing it to your microcontroller. the pin designations are for the NodeMCU I used for the original proof-of-concept, so don't forget to update those if your ESP8266 is of a different configuration. Below I've listed what pins I used and which lines in the code to modify for your personal use. 
+This is a project taken from https://www.hackster.io/s-wilson/iot-garage-door-yes-another-one-a2a6fb and modified with WiFi Manager so you don't have to input your SSID and password before flashing it to your microcontroller. The pin designations are for the NodeMCU I used for the original proof-of-concept, so don't forget to update those if your ESP8266 is of a different configuration. Below I've listed what pins I used and which lines in the code to modify for your personal use. 
 
 For single door set-up:
 
