@@ -10,7 +10,7 @@ statusPin = 2;       //pin to tell if the door is open/closed (D4)<br>
 Change lines:<br>
 37 for their port<br>
 45 for their pin<br>
-127 for their header<br>
+167 for their header<br>
 
 
 For double door set-up:<br>
@@ -23,4 +23,4 @@ statusPin2 = 3;      //pin to tell if the door is open/closed on door 2 (RX)<br>
 Change lines:<br>
 39 for their port<br>
 47 for their pin<br>
-141 for their header<br>
+146 for their header<br>
