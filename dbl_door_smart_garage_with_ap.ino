@@ -24,7 +24,7 @@
 #include <WiFiManager.h>
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
-
+#include <ArduinoOTA.h>
 
 extern "C" {
   #include "user_interface.h"
@@ -98,8 +98,13 @@ void setup() {
 }
 
 void loop() {
+  
+  //Use ArduinoOTA 
+  {ArduinoOTA.handle();}
+  
   // Check if a client has connected
   WiFiClient client = server.available();
+ 
  
   if (!client) {
     return;
