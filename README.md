@@ -6,8 +6,8 @@ openClosePin = 5;    //actuate relay (D1)
 statusPin = 2;       //pin to tell if the door is open/closed (D4)
 
 Change lines:
-37 for their port,
-45 for their pin,
+37 for their port,<br>
+45 for their pin,<br>
 127 for their header
 
 
