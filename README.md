@@ -10,7 +10,7 @@ statusPin = 2;       //pin to tell if the door is open/closed (D4)<br>
 
 For double door set-up:<br>
 
-openClosePin1 = 5;   //actuate relay 1, door 1 D1<br>
+openClosePin1 = 5;   //actuate relay 1, door 1 (D1)<br>
 statusPin1 = 2;      //pin to tell if the door is open/closed on door 1 (D4)<br>
-openClosePin2 = 4;   //actuate relay 2, door 2 D2<br>
+openClosePin2 = 4;   //actuate relay 2, door 2 (D2)<br>
 statusPin2 = 3;      //pin to tell if the door is open/closed on door 2 (RX)<br>
