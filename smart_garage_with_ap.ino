@@ -25,7 +25,7 @@
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <ArduinoOTA.h>
-//#include "config.h"
+#include "config.h"
 extern "C" {
   #include "user_interface.h"
 }
@@ -34,7 +34,7 @@ extern "C" {
 
 int openClosePin = 5; //actuate relay D1
 int statusPin = 2; //pin to tell open/close D4
-int serverPort = THEIR_PORT;// server port, usually 5142 for security through obscurity
+
 
 String HTTP_req;
 String code;
@@ -42,7 +42,6 @@ String code;
 WiFiServer server(serverPort);
 
 //*-- IoT Information
-const char* pass_sent = "THEIR_PIN";
 char codeOK='0';//start Code is blank....
 
 void setup() {
