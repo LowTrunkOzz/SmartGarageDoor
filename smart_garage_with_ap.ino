@@ -25,7 +25,7 @@
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <ArduinoOTA.h>
-
+//#include "config.h"
 extern "C" {
   #include "user_interface.h"
 }
@@ -164,7 +164,7 @@ void loop() {
           client.print("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>IoT Garage Door</title>\r\n<meta name='viewport' content='width=device-width', initial-scale='1'>");
           client.print("<script>\r\nfunction GetSwitchState() {\r\nnocache = \"&nocache=\" + Math.random() * 1000000;\r\nvar request = new XMLHttpRequest();\r\nrequest.onreadystatechange = function() {\r\nif (this.readyState == 4) {\r\nif (this.status == 200) {\r\nif (this.responseText != null) {\r\ndocument.getElementById(\"switch_txt\").innerHTML = this.responseText;\r\n}}}}\r\nrequest.open(\"GET\", \"ajax_switch\" + nocache, true);\r\nrequest.send(null);\r\nsetTimeout('GetSwitchState()', 1000);\r\n}\r\n</script>\n");
           client.print("<script>\r\nfunction DoorActivate() {\r\nvar request = new XMLHttpRequest();\r\nrequest.open(\"GET\", \"door_activate\" + nocache, true);\r\nrequest.send(null);\r\n}\r\n</script>\n");
-          client.print("</head>\r\n<body onload=\"GetSwitchState()\">\r\n<center><h1>THEIR NAME Smart Garage Door</h1><hr>\r\n<div id=\"switch_txt\">\r\n</div>\r\n<br>\n");
+          client.print("</head>\r\n<body onload=\"GetSwitchState()\">\r\n<center><h1>"h1_ID"</h1><hr>\r\n<div id=\"switch_txt\">\r\n</div>\r\n<br>\n");
           client.print("Input password to control Garage Door.\r\n<br><br><form name=\"passcode\" onSubmit=\"GetCode()\"><input type=\"password\" name=\"password\" size='8' maxlength='4'>&nbsp;<input type=submit name=\"Submit\" value=\"Submit\" onClick=\"GetCode()\" style='height:22px; width:80px'></form><br><br>\n");
           if (HTTP_req.indexOf(pass_sent) > 0) {
             GetCode();

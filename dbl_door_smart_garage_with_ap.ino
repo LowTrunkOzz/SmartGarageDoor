@@ -179,7 +179,7 @@ void loop() {
           client.print("<script>\r\nfunction Door1Activate() {\r\nvar request = new XMLHttpRequest();\r\nrequest.open(\"GET\", \"door1_activate\" + nocache, true);\r\nrequest.send(null);\r\n}\r\n</script>\n");
           client.print("<script>\r\nfunction GetSwitch2State() {\r\nnocache = \"&nocache=\" + Math.random() * 1000000;\r\nvar request = new XMLHttpRequest();\r\nrequest.onreadystatechange = function() {\r\nif (this.readyState == 4) {\r\nif (this.status == 200) {\r\nif (this.responseText != null) {\r\ndocument.getElementById(\"switch_txt\").innerHTML = this.responseText;\r\n}}}}\r\nrequest.open(\"GET\", \"ajax_switch\" + nocache, true);\r\nrequest.send(null);\r\nsetTimeout('GetSwitch2State()', 1000);\r\n}\r\n</script>\n");
           client.print("<script>\r\nfunction Door2Activate() {\r\nvar request = new XMLHttpRequest();\r\nrequest.open(\"GET\", \"door2_activate\" + nocache, true);\r\nrequest.send(null);\r\n}\r\n</script>\n");
-          client.print("</head>\r\n<body onload=\"GetSwitch1State()\">\r\n<body onload=\"GetSwitch2State()\">\r\n<center><h1>THEIR NAME Smart Garage Door</h1><hr>\r\n<div id=\"switch_txt\">\r\n</div>\r\n<br>\n");
+          client.print("</head>\r\n<body onload=\"GetSwitch1State()\">\r\n<body onload=\"GetSwitch2State()\">\r\n<center><h1>"h1_ID"</h1><hr>\r\n<div id=\"switch_txt\">\r\n</div>\r\n<br>\n");
           client.print("Input password to control Garage Door.\r\n<br><br><form name=\"passcode\" onSubmit=\"GetCode()\"><input type=\"password\" name=\"password\" size='8' maxlength='4'>&nbsp;<input type=submit name=\"Submit\" value=\"Submit\" onClick=\"GetCode()\" style='height:22px; width:80px'></form><br><br>\n");
           if (HTTP_req.indexOf(pass_sent) > 0) {
             GetCode();
