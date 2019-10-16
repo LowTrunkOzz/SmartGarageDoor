@@ -23,4 +23,4 @@ statusPin2 = 3;      //pin to tell if the door is open/closed on door 2 (RX)<br>
 Change lines:<br>
 39 for their port<br>
 47 for their pin<br>
-146 for their header<br>
+182 for their header<br>
