@@ -16,4 +16,4 @@ const char* (pass_sent) = "YOUR_PIN";
 const char* host = "esp8266-webupdate";
 const char* update_path = "/update";
 const char* USERNAME = "admin";      //make this a fairly secure name
-const char* USERPASS = "passw0rd";      //make this a STRONG password
+const char* USERPASS = "admin";      //make this a STRONG password
