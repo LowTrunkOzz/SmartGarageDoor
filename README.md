@@ -1,6 +1,9 @@
-This is a project taken from https://www.hackster.io/s-wilson/iot-garage-door-yes-another-one-a2a6fb and modified with WiFi Manager (so you don't have to input your SSID and password before flashing it to your microcontroller) and HTTPUpdater (to update remotely).  <br>
+This is a project taken from https://www.hackster.io/s-wilson/iot-garage-door-yes-another-one-a2a6fb and https://hieromon.github.io/AutoConnect/otabrowser.html#how-to-embed-esp8266httpupdateserver-in-autoconnect and modified with WiFi Manager (so you don't have to input your SSID and password before flashing it to your microcontroller) and HTTPUpdater (to update remotely).  <br>
 
 The pin designations listed below are for the NodeMCU I used for the original proof-of-concept, so don't forget to update those if your ESP8266 is of a different configuration. I have included the code for both single door and double door configurations. Please update the config.h file to your required port, PIN, and what you want the header to display (PIN and header name MUST be in quotes or it WILL NOT work) and drop that in the same folder as your sketch before you upload. Enjoy!<br>
+
+This should also work for esp32 but I don't have one to test it out.</br>
+
 
 For single door set-up:<br>
 
