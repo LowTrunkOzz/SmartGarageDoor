@@ -45,8 +45,8 @@ WiFiServer server(serverPort);
 char codeOK='0';//start Code is blank....
 
 static const char HELLO_PAGE[] PROGMEM = R"(
-{ "title": ""h1_ID" Smart Garage Updater", "uri": "/", "menu": true, "element": [
-   
+{ "title": "Smart Garage ", "uri": "/", "menu": true, "element": [
+    { "name": "caption", "type": "ACText", "value": "<h2>Your Garage Updater!</h2>",  "style": "text-align:center;color:#2f4f4f;padding:10px;" },
     { "name": "content", "type": "ACText", "value": "Select menu button for options." } ]
 }
 )";
