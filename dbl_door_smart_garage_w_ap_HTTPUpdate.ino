@@ -17,7 +17,7 @@ hacked them together!
 #include <ESP8266mDNS.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPUpdateServer.h>
-#include "HTTPUpdateconfig.h"
+#include "DblDoorConfig.h"
 #include <AutoConnect.h>
 ESP8266WebServer httpServer;                
 ESP8266HTTPUpdateServer httpUpdate;         
