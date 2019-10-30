@@ -7,8 +7,8 @@ This should also work for esp32 but I don't have one to test it out.</br>
 
 For single door set-up:<br>
 
-openClosePin = 5;    //actuate relay (D1)<br>
-statusPin = 2;       //pin to tell if the door is open/closed (D4)<br>
+openClosePin1 = 5;    //actuate relay (D1)<br>
+statusPin1 = 2;       //pin to tell if the door is open/closed (D4)<br>
 
 
 For double door set-up:<br>
