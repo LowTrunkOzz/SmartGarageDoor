@@ -102,7 +102,7 @@ httpUpdate.setup(&httpServer, USERNAME, USERPASS);
 }
 
 // send the state of the switch to the web browser
-void GetSwitchState(WiFiClient cl) {
+void GetSwitch1State(WiFiClient cl) {
     if (digitalRead(statusPin1) == 1) {
       cl.println("<p>Garage Door is <span style='background-color:#FF0000; font-size:18pt'>Open</span></p>");
     }
@@ -115,7 +115,7 @@ void GetSwitchState(WiFiClient cl) {
       codeOK='1';
   }
  
-  void DoorActivate() {
+  void Door1Activate() {
     digitalWrite(openClosePin1, HIGH);
     delay(1000);
     digitalWrite(openClosePin1, LOW);
@@ -151,15 +151,15 @@ void loop() {
         client.println();
         if (HTTP_req.indexOf("ajax_switch") > -1) {
           // read switch state and send appropriate paragraph text
-          GetSwitchState(client);
+          GetSwitch1State(client);
           delay(0);
         }
         else {  // HTTP request for web page
           // send web page - contains JavaScript with AJAX calls
           client.print("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>IoT Garage Door</title>\r\n<meta name='viewport' content='width=device-width', initial-scale='1'>");
-          client.print("<script>\r\nfunction GetSwitchState() {\r\nnocache = \"&nocache=\" + Math.random() * 1000000;\r\nvar request = new XMLHttpRequest();\r\nrequest.onreadystatechange = function() {\r\nif (this.readyState == 4) {\r\nif (this.status == 200) {\r\nif (this.responseText != null) {\r\ndocument.getElementById(\"switch_txt\").innerHTML = this.responseText;\r\n}}}}\r\nrequest.open(\"GET\", \"ajax_switch\" + nocache, true);\r\nrequest.send(null);\r\nsetTimeout('GetSwitchState()', 1000);\r\n}\r\n</script>\n");
-          client.print("<script>\r\nfunction DoorActivate() {\r\nvar request = new XMLHttpRequest();\r\nrequest.open(\"GET\", \"door_activate\" + nocache, true);\r\nrequest.send(null);\r\n}\r\n</script>\n");
-          client.print("</head>\r\n<body onload=\"GetSwitchState()\">\r\n<center><h1>"h1_ID" Smart Garage Door</h1><hr>\r\n<div id=\"switch_txt\">\r\n</div>\r\n<br>\n");
+          client.print("<script>\r\nfunction GetSwitch1State() {\r\nnocache = \"&nocache=\" + Math.random() * 1000000;\r\nvar request = new XMLHttpRequest();\r\nrequest.onreadystatechange = function() {\r\nif (this.readyState == 4) {\r\nif (this.status == 200) {\r\nif (this.responseText != null) {\r\ndocument.getElementById(\"switch_txt\").innerHTML = this.responseText;\r\n}}}}\r\nrequest.open(\"GET\", \"ajax_switch\" + nocache, true);\r\nrequest.send(null);\r\nsetTimeout('GetSwitch1State()', 1000);\r\n}\r\n</script>\n");
+          client.print("<script>\r\nfunction Door1Activate() {\r\nvar request = new XMLHttpRequest();\r\nrequest.open(\"GET\", \"door_activate\" + nocache, true);\r\nrequest.send(null);\r\n}\r\n</script>\n");
+          client.print("</head>\r\n<body onload=\"GetSwitch1State()\">\r\n<center><h1>"h1_ID" Smart Garage Door</h1><hr>\r\n<div id=\"switch_txt\">\r\n</div>\r\n<br>\n");
           client.print("Input password to control Garage Door.\r\n<br><br><form name=\"passcode\" onSubmit=\"GetCode()\"><input type=\"password\" name=\"password\" size='8' maxlength='4'>&nbsp;<input type=submit name=\"Submit\" value=\"Submit\" onClick=\"GetCode()\" style='height:22px; width:80px'></form><br><br>\n");
           if (HTTP_req.indexOf(pass_sent) > 0) {
             GetCode();
@@ -168,12 +168,12 @@ void loop() {
             client.print("<button type=\"button\" disabled style='height:50px; width:225px'>Activate the Door</button><br><br>\n");
           }
           if (codeOK == '1') {
-            client.print("<button type=\"button\" onclick=\"DoorActivate()\" style='height:50px; width:225px'>Activate the Door</button><br><br>\n");
+            client.print("<button type=\"button\" onclick=\"Door1Activate()\" style='height:50px; width:225px'>Activate the Door</button><br><br>\n");
           }
           //client.println(system_get_free_heap_size());
           if (HTTP_req.indexOf("door_activate") > -1) {
             // read switch state and send appropriate paragraph text
-            DoorActivate();
+            Door1Activate();
           }
           //}
           client.print("</body>\r\n</html>\n");
