@@ -22,7 +22,7 @@ const char* USERPASS = "admin";      /*make this a STRONG password*/
 
 //This section is for single door
 int openClosePin1 = 5;    //actuate relay 1, door 1 D1
-int statusPin1 = 2;         //pin to tell open/close on door 1 D4
+int statusPin1 = 2;         //pin to report if door 1 is open or closed D4
 
 //Uncomment this section for dbl door
 /*
