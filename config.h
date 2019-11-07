@@ -13,8 +13,8 @@ in quotes.
 */
 
 int serverPort = YOUR_PORT;
-const char* (pass_sent) = "YOUR_PIN";
 #define h1_ID "YOUR_NAME"
+const char* (pass_sent) = "YOUR_PIN";
 const char* host = "esp8266-webupdate";
 const char* update_path = "/update";
 const char* USERNAME = "admin";      /*make this a fairly secure name*/
@@ -27,5 +27,5 @@ int statusPin1 = 2;         //pin to tell open/close on door 1 D4
 //Uncomment this section for dbl door
 /*
 int openClosePin2 = 4;     //actuate relay 2, door 2 D2
-int statusPin2 = 3;        //pin to tell open/close on door 2 RX
+int statusPin2 = 3;        //pin to report if door 2 is open or closed RX
 */
